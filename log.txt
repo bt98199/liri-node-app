@@ -1,0 +1,41 @@
+===============March 27, 2019 11:58 PM==============
+Location: [34mTacoma[39m, [34mWA[39m
+[32m09/05/2019[39m(MM/DD/YYYY)
+Lineup: [31mundefined[39m
+Venue: [34mTacoma Dome[39m
+===============March 27, 2019 11:59 PM==============
+Lineup: [31mundefined[39m
+Venue: [34mTacoma Dome[39m
+Location: [34mTacoma[39m, [34mWA[39m
+[32m07/13/2019[39m(MM/DD/YYYY)
+===============March 27, 2019 11:59 PM==============
+[36mArtist: Harry Styles[39m
+From the album: 'Harry Styles'
+[95mSong Name: Sign of the Times[39m
+Preview: https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=4e812e8368634055808778813afe5e42
+===============March 27, 2019 11:59 PM==============
+[95mSong Name: Ring of Fire[39m
+From the album: 'Ring Of Fire: The Best Of Johnny Cash'
+[36mArtist: Johnny Cash[39m
+Preview: https://p.scdn.co/mp3-preview/e3bbba328a3227e0d1095f804cd73a634de8cd04?cid=4e812e8368634055808778813afe5e42
+===============March 28, 2019 12:00 AM==============
+[93mTitle: Mr. Nobody (2009)[39m
+Ratings (IMDB||Rotten Tomatoes): 7.8/10 || 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Starring: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+API response code: 200
+===============March 28, 2019 12:00 AM==============
+[93mTitle: Saw (2004)[39m
+Ratings (IMDB||Rotten Tomatoes): 7.6/10 || 49%
+Language: English
+Country: USA
+Plot: Two strangers, who awaken in a room with no recollection of how they got there, soon discover they're pawns in a deadly game perpetrated by a notorious serial killer.
+API response code: 200
+Starring: Leigh Whannell, Cary Elwes, Danny Glover, Ken Leung
+===============March 28, 2019 12:00 AM==============
+[95mSong Name: I Want It That Way[39m
+Preview: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=4e812e8368634055808778813afe5e42
+[36mArtist: Backstreet Boys[39m
+From the album: 'The Hits--Chapter One'
