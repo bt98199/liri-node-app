@@ -6,26 +6,34 @@ var chalk = require("chalk");
 var moment = require("moment");
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
+
 var action = process.argv[2];
 var parameter = process.argv.slice(3).join(" ");
 
 function switchCase() {
+
   switch (action) {
+
     case 'concert-this':
       bandsInTown(parameter);                   
       break;                          
+
     case 'spotify-this-song':
       spotSong(parameter);
       break;
+
     case 'movie-this':
       getMovie(parameter);
       break;
+
     case 'do-what-it-says':
       getRandom();
       break;
+
       default:                            
       console.log("Invalid please use 'spotify-this-song', 'movie-this', 'concert-this', 'do-what-it-says'");
       break;
+
   }
 };
 switchCase();
@@ -34,13 +42,9 @@ function bandsInTown (parameter) {
 // const bandsInTown = (parameter) => {
 
     var searchBand = "IronMaiden"; // Lets get something back on bad calls just to make sure the interface is working
-    if (parameter == ""){
-    } else {
+    if (process.argv[3]) {
         searchBand = parameter;
     }
-    // if (process.argv[3]) {
-    //     searchBand = parameter;
-    // }
     console.log(searchBand);
     var queryUrl = "https://rest.bandsintown.com/artists/" + searchBand + "/events?app_id=codingbootcamp";
    console.log(queryUrl);
@@ -84,13 +88,12 @@ function spotSong(parameter) {
 function getMovie (parameter) {
     // const bandsInTown = (parameter) => {
     movieName = "Mr. Nobody";
-    // if (process.argv[3]) {
-    //     movieName = parameter;
-    // }
-    if (parameter == "") {
-    } else {
+    if (process.argv[3]) {
         movieName = parameter;
     }
+    // if (parameter !== "undefined") {
+    //       movieName = parameter;
+    //     }
 
     var queryUrl = "http://www.omdbapi.com/?&y=&plot=short&apikey=trilogy&t=" + movieName;
     axios.get(queryUrl).then(
@@ -118,7 +121,11 @@ function getRandom() {
 			bandsInTown(data[1]);
 		}
 		else if(data[0] === "spotify-this-song") {
+            // for (let i = 0; i < 2; i++) {
+            //     data.push(data[1].slice(1,-1));
+            // }
             console.log (data);
+            data[1]= data[1].slice(1,-1);
 			spotSong(data[1]);
 		}
 		else if(data[0] === "movie-this") {
