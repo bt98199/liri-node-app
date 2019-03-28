@@ -47,12 +47,14 @@ function bandsInTown (parameter) {
     axios.get(queryUrl)
     .then(function(response){
         response.data.forEach(concert => {
-          createLog("Band Name: " + concert.venue.name);
-          createLog("Concert Location: " + concert.venue.city + ", " + concert.venue.region);
-          createLog(moment(concert.datetime).format("MM/DD/YYYY"));
-          createLog(concert.id);
-          createLog(concert.artist_id);
-          createLog(concert.url);
+		if (concert.venue.region === "WA") {
+		  createLog("==============="+ moment().format('LLL') + "==============");
+		  createLog("Lineup: " + chalk.red(concert.venue.lineup).toString()); // Doesn't work to stringify array
+		//   createLog("Lineup: " + concert.venue.lineup.values()); // Doesn't work to stringify array
+          createLog("Venue: " + chalk.blue(concert.venue.name));
+          createLog("Location: " + chalk.blue(concert.venue.city) + ", " + chalk.blue(concert.venue.region));
+		  createLog(chalk.green(moment(concert.datetime).format("MM/DD/YYYY")) + "(MM/DD/YYYY)");
+		  }
           })
         });  
     };
@@ -72,9 +74,10 @@ function spotSong(parameter) {
     spotify.search({ type: 'track', query: songName, limit: 1 }, function(err, data) {
         if (err) {
             return console.log("Error: There was a problem with the spotify interface. " + err );
-        }
-        createLog("Song Name: " + data.tracks.items[0].name);
-        createLog("Artist: " + data.tracks.items[0].artists[0].name);
+		}
+		createLog("==============="+ moment().format('LLL') + "==============");
+        createLog(chalk.magentaBright("Song Name: " + data.tracks.items[0].name));
+        createLog(chalk.cyan("Artist: " + data.tracks.items[0].artists[0].name));
         if(data.tracks.items[0].preview_url !== null) { createLog("Preview: " + data.tracks.items[0].preview_url); }
         createLog("From the album: '" + data.tracks.items[0].album.name + "'");
       });
@@ -95,7 +98,8 @@ function getMovie (parameter) {
     var queryUrl = "http://www.omdbapi.com/?&y=&plot=short&apikey=trilogy&t=" + movieName;
     axios.get(queryUrl).then(
     function(response){
-      createLog("Title: " + response.data.Title + " ("+  response.data.Year + ")");
+	  createLog("==============="+ moment().format('LLL') + "==============");
+	  createLog(chalk.yellowBright("Title: " + response.data.Title + " ("+  response.data.Year + ")"));
       createLog("Ratings (IMDB||Rotten Tomatoes): " + response.data.Ratings[0].Value + " || " + response.data.Ratings[1].Value);
       createLog("Country: " + response.data.Country);
       createLog("Language: " + response.data.Language);
@@ -118,7 +122,6 @@ function getRandom() {
 			bandsInTown(data[1]);
 		}
 		else if(data[0] === "spotify-this-song") {
-            console.log (data);
 			spotSong(data[1]);
 		}
 		else if(data[0] === "movie-this") {
